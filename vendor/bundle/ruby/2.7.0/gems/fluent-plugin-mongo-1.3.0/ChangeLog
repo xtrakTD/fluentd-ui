@@ -1,0 +1,285 @@
+Release 1.3.0 - 2019/04/24
+
+	* out_mongo: Support auth_mech parameter to allow other authentication
+	* in_mongo_tail: Fix replicat set issue
+
+Release 1.2.2 - 2019/04/01
+
+	* out_mongo: Don't handle database placholders when specifying connection_string parameter
+
+Release 1.2.1 - 2018/12/18
+
+	* out_mongo_replset: Fix internal signature mismatch
+
+Release 1.2.0 - 2018/11/29
+
+	* out_mongo: Support placeholder in database parameter
+
+Release 1.1.2 - 2018/07/19
+
+	* Update mongo gem dependency
+
+
+Release 1.1.1 - 2018/05/17
+
+	* out_mongo/out_mongo_replset: Use built-in Output#format to fix EventTime serialization
+
+
+Release 1.1.0 - 2018/01/18
+
+	* in_mongo: Add batch_size parameter
+	* out_mongo: Handle collection options correctly
+
+
+Release 1.0.0 - 2017/11/26
+
+	* Use new Plugin API
+	* Update fluentd version to v0.14 or later
+
+
+Release 0.7.16 - 2016/10/05
+
+	* out_mongo: Log warn / deprecated message for invalid record handling
+
+
+Release 0.7.15 - 2016/08/16
+
+	* in_mongo_tail: Add object_id_keys parameter to convert ObjectId object into string
+
+
+Release 0.7.14 - 2016/08/06
+
+	* Fix unexpected value generation with replace_xxx parameters
+
+
+Release 0.7.13 - 2016/06/03
+
+	* Add mongodb_smaller_bson_limit parameter to disable MongoDB v1.7 or earlier versions by default.
+
+
+Release 0.7.12 - 2016/02/09
+
+	* Support saving last_id to mongod instead of local file
+
+
+Release 0.7.11 - 2015/11/26
+
+	* Add secret option to related parameters
+	* Support label in input plugin
+	* Add socket_pool_size parameter
+
+
+Release 0.7.10 - 2015/05/28
+
+	* Add SSL authentication options
+
+
+Release 0.7.9 - 2015/04/01
+
+	* Force to use mongo gem v1
+
+
+Release 0.7.8 - 2015/03/23
+
+	* Add url option to support URL configuration for MongoDB connection
+
+
+Release 0.7.7 - 2015/03/19
+
+	* Fix in_mongo_tail shutdown mechanizm for handling stop sequence correctly.
+
+
+Release 0.7.6 - 2015/02/12
+
+	* Relax fluentd dependency to support v0.12 or later
+
+
+Release 0.7.5 - 2015/01/05
+
+	* Add journaled option to support journaled write
+
+
+Release 0.7.4 - 2014/11/10
+
+	* Sanitize keys of each hash of an array
+	* Add config_set_default to mongo_replset
+
+
+Release 0.7.3 - 2014/03/09
+
+	* Add replace_dot_in_key_with and replace_dollar_in_key_with parameters to sanitize invalid key
+	* Add ssl parameter to enable SSL connection
+	* Relax gem version dependency
+
+
+Release 0.7.2 - 2014/02/05
+
+	* Support log_level option
+
+
+Release 0.7.1 - 2013/07/31
+
+	* Fix incomprehensible code indent
+	* Remove mongo_backup output
+	* Fix getting version from mongod for broken mongod support
+
+
+Release 0.7.0 - 2013/03/20
+
+	* Upgrade mongo gem least version to 1.8
+	* Upgrade fluentd gem least version to 0.10.9
+	* Use new classes with mongo gem version 1.8
+	* Replace safe with write_concern option in output plugins
+	* Change buffer_chunk_limit to 8MB when mongod version is 1.8 or later.
+
+
+Release 0.6.13 - 2013/01/15
+
+	* Add exclude_broken_fields config to output plugins
+
+
+Release 0.6.12 - 2012/12/28
+
+	* Fix mongo 2.2 capped? problem in mongo_tail
+	* Add wait_time config to mongo_tail
+
+
+Release 0.6.11 - 2012/12/04
+
+	* Use buildInfo instead of serverStatus to check version
+	  https://github.com/fluent/fluent-plugin-mongo/pull/20
+
+
+Release 0.6.10 - 2012/10/17
+
+	* mongo-tail always flush STDOUT for pipeline usage.
+	  https://github.com/fluent/fluent-plugin-mongo/issues/16
+	* Fix capped collection checking for 2.1.x or later versions.
+
+
+Release 0.6.9 - 2012/10/12
+
+	* Fix invalid use of '~>' in gemspec.
+
+
+Release 0.6.8 - 2012/10/12
+
+	* Lock fluentd gem version with 0.10.x.
+	* Lock mongo gem version with 1.6.x.
+
+
+Release 0.6.7 - 2012/03/31
+
+	* Fix invaild record handling with BSON::Binary
+	  https://github.com/fluent/fluent-plugin-mongo/issues/12
+	* Change disable_collection_check strategy
+	  https://github.com/fluent/fluent-plugin-mongo/commit/d840c948f45302ecd73af67c0b0022e3e905f955
+
+
+Release 0.6.6 - 2012/03/01
+
+	* Update mongo gem 1.5.2 -> 1.6.0 or later
+	* Move buffer_chunk_limit checking from configure to start
+
+
+Release 0.6.5 - 2012/02/27
+
+	* Fix "mongo_replset unexpectedly requires 'host' in configuration"
+	  https://github.com/fluent/fluent-plugin-mongo/issues/9
+
+
+Release 0.6.4 - 2012/02/16
+
+	* Add 'disable_collection_check' parameter
+	* Fix mongod_version bug
+
+
+Release 0.6.3 - 2012/02/08
+
+	* Add authentication support to input / output plugins
+	  https://github.com/fluent/fluent-plugin-mongo/pull/8
+
+
+Release 0.6.2 - 2012/01/23
+
+	* Add :safe to Connection#new options
+	  https://github.com/fluent/fluent-plugin-mongo/issues/7
+	* out_mongo_tag_collection renamed to out_mongo_tag_mapped
+
+
+Release 0.6.1 - 2012/01/17
+
+	* Add mongo_replset explanation to README
+
+
+Release 0.6.0 - 2012/01/16
+
+	* Add mongo_replset for Replica Set
+	* out_mongo_tag_collection merged into out_mongo.
+	  Please use tag_mapped mode.
+	* Support invalid documets handling
+
+
+Release 0.5.3 - 2011/12/20
+
+	* Fix "use format time argument when record to mongodb"
+	  https://github.com/fluent/fluent-plugin-mongo/pull/6
+
+
+Release 0.5.2 - 2011/11/29
+
+	* Fix mongod_version
+	* Fix "configure of ouput plugins raises an exception when mongod is down"
+	  https://github.com/fluent/fluent-plugin-mongo/issues/4
+
+
+Release 0.5.1 - 2011/11/26
+
+	* Fix typo
+
+
+Release 0.5.0 - 2011/11/26
+
+	* Jeweler to Bundler
+	* Add in_mongo_tail
+	* Add out_mongo_tag_collection
+	* Add default 'collection' configuration to mongo_tag_collection
+	* Update the version of dependency modules
+	* Fix "MongoDB and Ruby-Driver have a size limit of insert operation."
+	  https://github.com/fluent/fluent-plugin-mongo/issues/3
+
+
+Release 0.4.0 - 2011/10/16
+
+	* Support fluentd 0.10.1
+	* Add out_mongo.rb test
+
+
+Release 0.3.1 - 2011/10/05
+
+	* Add mongo-tail tool
+	  https://github.com/fluent/fluent-plugin-mongo/issues/1
+
+
+Release 0.3.0 - 2011/10/03
+
+	* Add mongo_backup
+
+
+Release 0.2.1 - 2011/10/02
+
+	* Fix mongo dependency
+	* Fix typo
+	* Fix configuration parsing
+	* Replace MongoBuffer with MongoOutput's <store>
+	* Fix duplicated insert to backup
+
+
+Release 0.2.0 - 2011/09/28
+
+	* MongoOutput becomes BufferedOutput
+
+
+Release 0.1.0 - 2011/09/28
+
+	* Add out_mongo

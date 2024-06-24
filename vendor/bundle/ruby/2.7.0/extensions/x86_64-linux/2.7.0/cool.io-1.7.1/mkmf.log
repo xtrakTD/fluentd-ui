@@ -1,0 +1,70 @@
+have_library: checking for main() in -lc... -------------------- yes
+
+"gcc -o conftest -I/home/xtr/.rvm/rubies/ruby-2.7.8/include/ruby-2.7.0/x86_64-linux -I/home/xtr/.rvm/rubies/ruby-2.7.8/include/ruby-2.7.0/ruby/backward -I/home/xtr/.rvm/rubies/ruby-2.7.8/include/ruby-2.7.0 -I.    -g -O2 -fPIC conftest.c  -L. -L/home/xtr/.rvm/rubies/ruby-2.7.8/lib -Wl,-rpath,/home/xtr/.rvm/rubies/ruby-2.7.8/lib -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/home/xtr/.rvm/rubies/ruby-2.7.8/lib -L/home/xtr/.rvm/rubies/ruby-2.7.8/lib -lruby  -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+"gcc -o conftest -I/home/xtr/.rvm/rubies/ruby-2.7.8/include/ruby-2.7.0/x86_64-linux -I/home/xtr/.rvm/rubies/ruby-2.7.8/include/ruby-2.7.0/ruby/backward -I/home/xtr/.rvm/rubies/ruby-2.7.8/include/ruby-2.7.0 -I.    -g -O2 -fPIC conftest.c  -L. -L/home/xtr/.rvm/rubies/ruby-2.7.8/lib -Wl,-rpath,/home/xtr/.rvm/rubies/ruby-2.7.8/lib -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/home/xtr/.rvm/rubies/ruby-2.7.8/lib -L/home/xtr/.rvm/rubies/ruby-2.7.8/lib -lruby -lc  -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return !p; }
+/* end */
+
+--------------------
+
+have_macro: checking for HAVE_RB_IO_T in ruby/io.h... -------------------- yes
+
+"gcc -I/home/xtr/.rvm/rubies/ruby-2.7.8/include/ruby-2.7.0/x86_64-linux -I/home/xtr/.rvm/rubies/ruby-2.7.8/include/ruby-2.7.0/ruby/backward -I/home/xtr/.rvm/rubies/ruby-2.7.8/include/ruby-2.7.0 -I.    -g -O2 -fPIC   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby/io.h>
+4: /*top*/
+5: #ifndef HAVE_RB_IO_T
+6: # error
+7: |:/ === HAVE_RB_IO_T undefined === /:|
+8: #endif
+/* end */
+
+--------------------
+
+have_struct_member: checking for rb_io_t.fd in ruby/io.h... -------------------- yes
+
+"gcc -I/home/xtr/.rvm/rubies/ruby-2.7.8/include/ruby-2.7.0/x86_64-linux -I/home/xtr/.rvm/rubies/ruby-2.7.8/include/ruby-2.7.0/ruby/backward -I/home/xtr/.rvm/rubies/ruby-2.7.8/include/ruby-2.7.0 -I.    -g -O2 -fPIC   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby/io.h>
+ 4: 
+ 5: /*top*/
+ 6: int s = (char *)&((rb_io_t*)0)->fd - (char *)0;
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   return !!argv[argc];
+10: }
+/* end */
+
+--------------------
+

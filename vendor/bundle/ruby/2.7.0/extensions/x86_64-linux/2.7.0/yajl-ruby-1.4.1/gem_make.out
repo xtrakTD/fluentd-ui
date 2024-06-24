@@ -1,0 +1,31 @@
+current directory: /home/xtr/repos/fluentd-ui/vendor/bundle/ruby/2.7.0/gems/yajl-ruby-1.4.1/ext/yajl
+/home/xtr/.rvm/rubies/ruby-2.7.8/bin/ruby -I /home/xtr/.rvm/rubies/ruby-2.7.8/lib/ruby/2.7.0 -r ./siteconf20240624-997196-ooqqq2.rb extconf.rb
+creating Makefile
+
+current directory: /home/xtr/repos/fluentd-ui/vendor/bundle/ruby/2.7.0/gems/yajl-ruby-1.4.1/ext/yajl
+make "DESTDIR=" clean
+
+current directory: /home/xtr/repos/fluentd-ui/vendor/bundle/ruby/2.7.0/gems/yajl-ruby-1.4.1/ext/yajl
+make "DESTDIR="
+compiling yajl.c
+compiling yajl_alloc.c
+compiling yajl_buf.c
+compiling yajl_encode.c
+compiling yajl_ext.c
+yajl_ext.c: In function ‘rb_yajl_parser_parse’:
+yajl_ext.c:496:17: warning: variable ‘stat’ set but not used [-Wunused-but-set-variable]
+  496 |     yajl_status stat;
+      |                 ^~~~
+compiling yajl_gen.c
+compiling yajl_lex.c
+yajl_lex.c: In function ‘yajl_tok_name’:
+yajl_lex.c:42:5: warning: enumeration value ‘yajl_tok_comment’ not handled in switch [-Wswitch]
+   42 |     switch (tok) {
+      |     ^~~~~~
+compiling yajl_parser.c
+compiling yajl_version.c
+linking shared-object yajl/yajl.so
+
+current directory: /home/xtr/repos/fluentd-ui/vendor/bundle/ruby/2.7.0/gems/yajl-ruby-1.4.1/ext/yajl
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 yajl.so ./.gem.20240624-997196-1b2007o/yajl

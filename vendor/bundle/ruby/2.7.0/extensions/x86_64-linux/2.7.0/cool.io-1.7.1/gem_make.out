@@ -1,0 +1,18 @@
+current directory: /home/xtr/repos/fluentd-ui/vendor/bundle/ruby/2.7.0/gems/cool.io-1.7.1/ext/iobuffer
+/home/xtr/.rvm/rubies/ruby-2.7.8/bin/ruby -I /home/xtr/.rvm/rubies/ruby-2.7.8/lib/ruby/2.7.0 -r ./siteconf20240624-997196-uduw6l.rb extconf.rb
+checking for main() in -lc... yes
+checking for HAVE_RB_IO_T in ruby/io.h... yes
+checking for rb_io_t.fd in ruby/io.h... yes
+creating Makefile
+
+current directory: /home/xtr/repos/fluentd-ui/vendor/bundle/ruby/2.7.0/gems/cool.io-1.7.1/ext/iobuffer
+make "DESTDIR=" clean
+
+current directory: /home/xtr/repos/fluentd-ui/vendor/bundle/ruby/2.7.0/gems/cool.io-1.7.1/ext/iobuffer
+make "DESTDIR="
+compiling iobuffer.c
+linking shared-object iobuffer_ext.so
+
+current directory: /home/xtr/repos/fluentd-ui/vendor/bundle/ruby/2.7.0/gems/cool.io-1.7.1/ext/iobuffer
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 iobuffer_ext.so ./.gem.20240624-997196-9q97hk
